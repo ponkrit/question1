@@ -6,10 +6,10 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./column1.component.css']
 })
 export class Column1Component {
-  @Output() onInputValueChanged:EventEmitter<number> = new EventEmitter<number>();
+  @Output() onInputValueChanged:EventEmitter<string> = new EventEmitter<string>();
   public inputValue:string = '1';
 
-  public onInputValueChange = function () {
+  public onInputValueChange = function (): void {
     const newValue = this._validate(this.inputValue);
 
     setTimeout(() => {
@@ -18,8 +18,8 @@ export class Column1Component {
     }, 100);
   }
 
-  private _validate = function (inputValue) {
-    inputValue = inputValue.replace(/[^\d.-]/g, '') || '1';
+  private _validate = function (inputValue): string {
+    inputValue = inputValue.replace(/[^\d.-]/g, '') || '';
 
     if (parseFloat(inputValue) < 0) {
       inputValue = '1';
