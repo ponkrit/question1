@@ -1,13 +1,16 @@
 <div class="container">
   <div class="left">
     <app-column1
-      (onInputValueChanged)="validateValue($event)">
+      (onInputValueChanged)="calculateByValue($event)">
     </app-column1>
   </div>
   <div class="middle">
-    <app-column2></app-column2>
+    <app-column2
+      (onInputTypeChanged)="calculateByType($event)">
+    </app-column2>
   </div>
   <div class="right">
-    <app-column3></app-column3>
+    <app-column3
+      [result]="result"></app-column3>
   </div>
 </div>

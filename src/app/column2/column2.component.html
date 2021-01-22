@@ -1,1 +1,4 @@
-<p>column2 works!</p>
+<select name="valueType" [(ngModel)]="valueType" (change)="onValueTypeChange()">
+  <option value="1">isPrime</option>
+  <option value="2">isFibonacci</option>
+</select>
