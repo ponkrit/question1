@@ -7,7 +7,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 export class Column1Component {
   @Output() onInputValueChanged:EventEmitter<number> = new EventEmitter<number>();
-  public inputValue:number = 1;
+  public inputValue:string = '1';
 
   public onInputValueChange = function () {
     const newValue = this._validate(this.inputValue);
@@ -21,8 +21,8 @@ export class Column1Component {
   private _validate = function (inputValue) {
     inputValue = inputValue.replace(/[^\d.-]/g, '');
 
-    if (inputValue < 0) {
-      inputValue = 1;
+    if (parseFloat(inputValue) < 0) {
+      inputValue = '1';
     }
 
     return inputValue;

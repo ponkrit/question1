@@ -1,5 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import { Column1Component } from './column1.component';
 
 describe('Column1Component', () => {
@@ -19,7 +18,27 @@ describe('Column1Component', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should assign inputValue to be 2', fakeAsync(() => {
+    component.inputValue = '2';
+    component.onInputValueChange();
+    tick(100);
+
+    expect(component.inputValue).toEqual('2');
+  }));
+
+  it('should assign inputValue to be 1', fakeAsync(() => {
+    component.inputValue = '-2';
+    component.onInputValueChange();
+    tick(100);
+
+    expect(component.inputValue).toEqual('1');
+  }));
+
+  it('should assign inputValue to be 5', fakeAsync(() => {
+    component.inputValue = '5abc';
+    component.onInputValueChange();
+    tick(100);
+
+    expect(component.inputValue).toEqual('5');
+  }));
 });
