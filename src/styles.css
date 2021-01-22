@@ -1,26 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+}
 body {
   padding: 0;
   margin: 0;
+  height: 100%;
 }
 .container {
   overflow: scroll;
   display: table;
   min-width: 600px;
   width: 100%;
+  height: 100%;
 }
 .container > div {
   display: table-cell;
+  padding: 10px;
 }
 .left {
-  width: 200px;
+  width: 180px;
   border-right: 1px #000 solid;
 }
 .middle {
-  min-width: 100px;
+  min-width: 80px;
   width: calc(100% - 500px);
 }
 .right {
   border-left: 1px #000 solid;
-  width: 300px;
+  width: 280px;
 }
