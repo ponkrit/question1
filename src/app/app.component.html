@@ -1,6 +1,8 @@
 <div class="container">
   <div class="left">
-    <app-column1></app-column1>
+    <app-column1
+      (onInputValueChanged)="validateValue($event)">
+    </app-column1>
   </div>
   <div class="middle">
     <app-column2></app-column2>

@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-column1',
   templateUrl: './column1.component.html',
   styleUrls: ['./column1.component.css']
 })
-export class Column1Component implements OnInit {
+export class Column1Component {
+  @Output() onInputValueChanged:EventEmitter<number> = new EventEmitter<number>();
+  public inputValue:number = 1;
 
-  constructor() { }
+  public onInputValueChange = function () {
+    const newValue = this._validate(this.inputValue);
 
-  ngOnInit(): void {
+    setTimeout(() => {
+      this.inputValue = newValue;
+      this.onInputValueChanged.emit(newValue);
+    }, 100);
   }
 
+  private _validate = function (inputValue) {
+    inputValue = inputValue.replace(/[^\d.-]/g, '');
+
+    if (inputValue < 0) {
+      inputValue = 1;
+    }
+
+    return inputValue;
+  }
 }

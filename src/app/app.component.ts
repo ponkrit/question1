@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'test-app';
+  public inputValue = 1;
+
+  public validateValue = function (value) {
+    this.inputValue = value;
+  };
 }
