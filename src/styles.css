@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  overflow: scroll;
+  display: table;
+  min-width: 600px;
+  width: 100%;
+}
+.container > div {
+  display: table-cell;
+}
+.left {
+  width: 200px;
+  border-right: 1px #000 solid;
+}
+.middle {
+  min-width: 100px;
+  width: calc(100% - 500px);
+}
+.right {
+  border-left: 1px #000 solid;
+  width: 300px;
+}
