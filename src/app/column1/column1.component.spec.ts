@@ -41,4 +41,12 @@ describe('Column1Component', () => {
 
     expect(component.inputValue).toEqual('5');
   }));
+
+  it('should assign inputValue to be 1', fakeAsync(() => {
+    component.inputValue = 'abc';
+    component.onInputValueChange();
+    tick(100);
+
+    expect(component.inputValue).toEqual('1');
+  }));
 });

@@ -19,7 +19,7 @@ export class Column1Component {
   }
 
   private _validate = function (inputValue) {
-    inputValue = inputValue.replace(/[^\d.-]/g, '');
+    inputValue = inputValue.replace(/[^\d.-]/g, '') || '1';
 
     if (parseFloat(inputValue) < 0) {
       inputValue = '1';
