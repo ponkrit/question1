@@ -1,7 +1,6 @@
 import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import {Column1Component} from "./column1/column1.component";
 
 describe('AppComponent', () => {
   let component: AppComponent;
